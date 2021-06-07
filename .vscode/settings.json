@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "algorithm": "c",
+        "array": "c",
+        "rope": "c",
+        "slist": "c",
+        "bitset": "c",
+        "valarray": "c",
+        "regex": "c",
+        "initializer_list": "c",
+        "string_view": "c",
+        "utility": "c",
+        "crt.h": "c",
+        "addr.h": "c",
+        "cos_component.h": "c",
+        "cos_stubs.h": "c",
+        "ext4.h": "c",
+        "*.tcc": "c",
+        "exception": "c"
+    }
+}

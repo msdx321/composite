@@ -1,0 +1,1 @@
+objdump -Srhtl /home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-sqlite_tests/global.sqlite_tests/tests.sqlite_tests.global.sqlite_tests >| ~/workspace/composite-sqlite/dump-object.txt
