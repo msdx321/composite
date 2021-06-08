@@ -17,7 +17,7 @@ static struct ext4_bcache *bc;
 
 struct ps_ns *ns;
 
-PS_NSSLAB_CREATE(fd, sizeof(ext4_file), 3, 9, 7);
+PS_NSSLAB_CREATE(fd, sizeof(struct ext4_file), 2, 9, 6);
 
 word_t
 fs_fopen(const char *path, const char *flags)
