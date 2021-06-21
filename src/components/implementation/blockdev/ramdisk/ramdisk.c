@@ -9,7 +9,7 @@ typedef struct block {
 	char c[BLOCKDEV_RAMDISK_BSIZE];
 } blk;
  
-blk ram_backend[BLOCKDEV_RAMDISK_SIZE / BLOCKDEV_RAMDISK_BSIZE];
+blk* ram_backend;
 
 unsigned int
 blockdev_bread(void *buf, unsigned long offset, unsigned long length)
@@ -30,6 +30,7 @@ blockdev_bwrite(const void *buf, unsigned long offset, unsigned long length)
 void
 cos_init(void)
 {
+	ram_backend = (blk *)memmgr_heap_page_allocn(BLOCKDEV_RAMDISK_SIZE / 4096);
 	return;
 }
 

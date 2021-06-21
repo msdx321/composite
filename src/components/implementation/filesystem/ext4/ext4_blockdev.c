@@ -4,7 +4,7 @@
 #include <blockdev.h>
 
 #define EXT4_BLOCKDEV_BSIZE 4096     // 4KiB
-#define EXT4_BLOCKDEV_SIZE 16 * 1024 // 16KiB
+#define EXT4_BLOCKDEV_SIZE 16 * 1024 * 1024 // 16KiB
 
 static int __blockdev_open(struct ext4_blockdev *bdev);
 static int __blockdev_bread(struct ext4_blockdev *bdev, void *buf, uint64_t blk_id, uint32_t blk_cnt);

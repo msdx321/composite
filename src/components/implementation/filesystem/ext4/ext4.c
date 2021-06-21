@@ -25,8 +25,12 @@ fs_fopen(const char *path, const char *flags)
 	ps_desc_t  fd;
 	ext4_file *file;
 
+	fd = -1;
 	file = ps_nsptr_alloc_fd(ns, &fd);
-	ext4_fopen(file, path, flags);
+	int ret = ext4_fopen(file, path, flags);
+	printc("ret %d\n", ret);
+
+	printc("mp %p\n", file->mp);
 
 	return (word_t)fd;
 }
@@ -48,7 +52,8 @@ fs_fread(word_t fd, void *buf, size_t size)
 {
 	size_t rcnt;
 
-	ext4_fread(ps_nsptr_lkup_fd(ns, fd), buf, size, &rcnt);
+	int ret = ext4_fread(ps_nsptr_lkup_fd(ns, fd), buf, size, &rcnt);
+	printc("fread ret %d\n", ret);
 
 	return rcnt;
 }
@@ -58,7 +63,8 @@ fs_fwrite(word_t fd, void *buf, size_t size)
 {
 	size_t wcnt;
 
-	ext4_fwrite(ps_nsptr_lkup_fd(ns, fd), buf, size, &wcnt);
+	int ret = ext4_fwrite(ps_nsptr_lkup_fd(ns, fd), buf, size, &wcnt);
+	printc("fwrite ret %d\n", ret);
 
 	return wcnt;
 }
@@ -93,7 +99,18 @@ cos_init(void)
 	ext4_device_register(bd, "ext4_fs");
 	ext4_mount("ext4_fs", "/", false);
 
-	printc("Hello world!\n");
-	while (1)
-		;
+	word_t fd, fd2;
+
+	char buf[16];
+	strcpy(buf, "TEST");
+
+	fd = fs_fopen("/test.txt", "w+");
+	printc("fs size: %ld\n", fs_fsize(fd));
+
+	fs_fwrite(fd, buf, 16);
+	printc("fs size: %ld\n", fs_fsize(fd));
+	fs_fseek(fd, 0, 0);
+	memset(buf, 0, 16);
+	fs_fread(fd, buf, 16);
+	printc("%s\n", buf);
 }

@@ -30,7 +30,14 @@ implements = [{interface = "blockdev"}]
 constructor = "booter"
 
 [[components]]
-name = "ramdisk_tests"
-img  = "tests.ramdisk_tests"
+name = "filesystem"
+img  = "filesystem.ext4"
 deps = [{srv = "sched", interface = "init"}, {srv = "capmgr", interface = "capmgr_create"}, {srv = "blockdev", interface = "blockdev"}, {srv = "capmgr", interface = "memmgr"}]
+implements = [{interface = "filesystem"}]
+constructor = "booter"
+
+[[components]]
+name = "ext4_tests"
+img  = "tests.ext4_tests"
+deps = [{srv = "sched", interface = "init"}, {srv = "capmgr", interface = "capmgr_create"}, {srv = "filesystem", interface = "filesystem"}, {srv = "capmgr", interface = "memmgr"}]
 constructor = "booter"

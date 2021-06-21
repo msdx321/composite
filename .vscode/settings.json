@@ -16,6 +16,13 @@
         "cos_stubs.h": "c",
         "ext4.h": "c",
         "*.tcc": "c",
-        "exception": "c"
+        "exception": "c",
+        "memmgr.h": "c",
+        "complex": "c",
+        "fstream": "c",
+        "iomanip": "c",
+        "istream": "c",
+        "ostream": "c",
+        "initargs.h": "c"
     }
 }

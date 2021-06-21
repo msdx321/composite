@@ -1,0 +1,287 @@
+cd composer/ ; cargo build
+
+***********************************************
+************* Building Components *************
+***********************************************
+
+make --no-print-directory -I/home/msdx321/workspace/composite-sqlite/src -C components
+make -I/home/msdx321/workspace/composite-sqlite/src/components -C lib
+***********************************************
+************[ Building Libraries ]*************
+***********************************************
+Configuring the ps library
+make -s -C ps config
+Building ps library...
+make -s -C ps all
+Building library files in posix
+make[3]: Nothing to be done for 'all'.
+Building library files in ubench
+make[3]: Nothing to be done for 'all'.
+make[3]: Nothing to be done for 'all'.
+Building library files in pci
+make[3]: Nothing to be done for 'all'.
+Building lwext4 library...
+make -s -C lwext4 generic
+-- The C compiler identification is GNU 8.3.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/msdx321/workspace/composite-sqlite/src/components/lib/lwext4/lwext4/build_generic
+make -s -C lwext4/build_generic lwext4
+Scanning dependencies of target lwext4
+[  4%] Building C object src/CMakeFiles/lwext4.dir/ext4.c.o
+[  9%] Building C object src/CMakeFiles/lwext4.dir/ext4_balloc.c.o
+[ 13%] Building C object src/CMakeFiles/lwext4.dir/ext4_bcache.c.o
+[ 18%] Building C object src/CMakeFiles/lwext4.dir/ext4_bitmap.c.o
+[ 22%] Building C object src/CMakeFiles/lwext4.dir/ext4_block_group.c.o
+[ 27%] Building C object src/CMakeFiles/lwext4.dir/ext4_blockdev.c.o
+[ 31%] Building C object src/CMakeFiles/lwext4.dir/ext4_crc32.c.o
+[ 36%] Building C object src/CMakeFiles/lwext4.dir/ext4_debug.c.o
+[ 40%] Building C object src/CMakeFiles/lwext4.dir/ext4_dir.c.o
+[ 45%] Building C object src/CMakeFiles/lwext4.dir/ext4_dir_idx.c.o
+[ 50%] Building C object src/CMakeFiles/lwext4.dir/ext4_extent.c.o
+[ 54%] Building C object src/CMakeFiles/lwext4.dir/ext4_fs.c.o
+[ 59%] Building C object src/CMakeFiles/lwext4.dir/ext4_hash.c.o
+[ 63%] Building C object src/CMakeFiles/lwext4.dir/ext4_ialloc.c.o
+[ 68%] Building C object src/CMakeFiles/lwext4.dir/ext4_inode.c.o
+[ 72%] Building C object src/CMakeFiles/lwext4.dir/ext4_journal.c.o
+[ 77%] Building C object src/CMakeFiles/lwext4.dir/ext4_mbr.c.o
+[ 81%] Building C object src/CMakeFiles/lwext4.dir/ext4_mkfs.c.o
+[ 86%] Building C object src/CMakeFiles/lwext4.dir/ext4_super.c.o
+[ 90%] Building C object src/CMakeFiles/lwext4.dir/ext4_trans.c.o
+[ 95%] Building C object src/CMakeFiles/lwext4.dir/ext4_xattr.c.o
+[100%] Linking C static library liblwext4.a
+[100%] Built target lwext4
+Building library files in crt
+make[3]: Nothing to be done for 'all'.
+Building library files in chan
+make[3]: Nothing to be done for 'all'.
+Building library files in util
+make[3]: Nothing to be done for 'all'.
+Building library files in sl_capmgr
+make[3]: Nothing to be done for 'all'.
+make[3]: Nothing to be done for 'all'.
+Building library files in initargs
+make[3]: Nothing to be done for 'all'.
+Building library files in sl_kernel
+make[3]: Nothing to be done for 'all'.
+make[3]: Nothing to be done for 'all'.
+Building library files in kernel
+make[3]: Nothing to be done for 'all'.
+Building library files in sl
+make[3]: Nothing to be done for 'all'.
+Building library files in stubs
+make[3]: Nothing to be done for 'all'.
+Building library files in component
+make[3]: Nothing to be done for 'all'.
+make -I/home/msdx321/workspace/composite-sqlite/src/components -C interface
+***********************************************
+************[ Building interfaces ]************
+***********************************************
+| Interface authmgr: Compiling stubs and libraries
+Compiling stubs for interface: authmgr, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface blockdev: Compiling stubs and libraries
+Compiling stubs for interface: blockdev, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface pong: Compiling stubs and libraries
+Compiling stubs for interface: pong, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface chanmgr_evt: Compiling stubs and libraries
+Compiling stubs for interface: chanmgr_evt, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface chanmgr: Compiling stubs and libraries
+Compiling stubs for interface: chanmgr, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface addr: Compiling stubs and libraries
+Compiling stubs for interface: addr, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface sched: Compiling stubs and libraries
+Compiling stubs for interface: sched, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface capmgr_create: Compiling stubs and libraries
+Compiling stubs for interface: capmgr_create, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface capmgr: Compiling stubs and libraries
+Compiling stubs for interface: capmgr, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface memmgr: Compiling stubs and libraries
+Compiling stubs for interface: memmgr, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface evt: Compiling stubs and libraries
+Compiling stubs for interface: evt, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface filesystem: Compiling stubs and libraries
+Compiling stubs for interface: filesystem, variant: stubs
+make[4]: Nothing to be done for 'all'.
+| Interface init: Compiling stubs and libraries
+Compiling stubs for interface: init, variant: kernel
+make[4]: Nothing to be done for 'all'.
+Compiling stubs for interface: init, variant: stubs
+make[4]: Nothing to be done for 'all'.
+make -I/home/msdx321/workspace/composite-sqlite/src/components -C implementation
+***********************************************
+*********[ Building Implementations ]**********
+***********************************************
+|     [COMP]   Processing component interface blockdev
+| Component blockdev.ramdisk:
+|     [CC]   ramdisk.c: Compiling
+|     [LD]   blockdev.ramdisk (blockdev.ramdisk.o): Linking together ramdisk.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+|     [COMP]   Processing component interface tests
+| Component tests.unit_schedcomp:
+|     [CC]   unit_schedcomp.c: Compiling
+|     [LD]   tests.unit_schedcomp (tests.unit_schedcomp.o): Linking together unit_schedcomp.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.pci:
+|     [CC]   pci.c: Compiling
+|     [LD]   tests.pci (tests.pci.o): Linking together pci.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.chkpt:
+|     [CC]   chkpt.c: Compiling
+|     [LD]   tests.chkpt (tests.chkpt.o): Linking together chkpt.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.ramdisk_tests:
+|     [CC]   ramdisk_tests.c: Compiling
+|     [LD]   tests.ramdisk_tests (tests.ramdisk_tests.o): Linking together ramdisk_tests.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.unit_defcompinfo:
+|     [CC]   unit_defcompinfo.c: Compiling
+|     [LD]   tests.unit_defcompinfo (tests.unit_defcompinfo.o): Linking together unit_defcompinfo.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.chan_lo:
+|     [CC]   chan2.c: Compiling
+|     [LD]   tests.chan_lo (tests.chan_lo.o): Linking together chan2.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.chan:
+|     [CC]   chan.c: Compiling
+|     [LD]   tests.chan (tests.chan.o): Linking together chan.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.unit_pingpong:
+|     [CC]   ping.c: Compiling
+|     [LD]   tests.unit_pingpong (tests.unit_pingpong.o): Linking together ping.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.chan_hi:
+|     [CC]   chan1.c: Compiling
+|     [LD]   tests.chan_hi (tests.chan_hi.o): Linking together chan1.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.unit_fprr:
+|     [CC]   unit_fprr.c: Compiling
+|     [LD]   tests.unit_fprr (tests.unit_fprr.o): Linking together unit_fprr.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.micro_xcores:
+|     [CC]   test_ipi_interference.c: Compiling
+|     [CC]   test_ipi_roundtrip.c: Compiling
+|     [CC]   test_ipi_switch.c: Compiling
+|     [CC]   test_ipi_n_n.c: Compiling
+|     [CC]   micro_xcores.c: Compiling
+|     [LD]   tests.micro_xcores (tests.micro_xcores.o): Linking together test_ipi_interference.o test_ipi_roundtrip.o test_ipi_switch.o test_ipi_n_n.o micro_xcores.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.micro_ipi:
+|     [CC]   micro_ipi.c: Compiling
+|     [LD]   tests.micro_ipi (tests.micro_ipi.o): Linking together micro_ipi.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.ext4_tests:
+|     [CC]   ext4_tests.c: Compiling
+|     [LD]   tests.ext4_tests (tests.ext4_tests.o): Linking together ext4_tests.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.unit_schedtests:
+|     [CC]   unit_schedlib.c: Compiling
+|     [LD]   tests.unit_schedtests (tests.unit_schedtests.o): Linking together unit_schedlib.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.unit_capmgr:
+|     [CC]   unit_capmgr.c: Compiling
+|     [LD]   tests.unit_capmgr (tests.unit_capmgr.o): Linking together unit_capmgr.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.kernel_tests:
+|     [CC]   k_test_tcap.c: Compiling
+|     [CC]   k_test_async.c: Compiling
+|     [CC]   kernel_test_booter.c: Compiling
+|     [CC]   k_test_mem.c: Compiling
+|     [CC]   k_perf_tests.c: Compiling
+|     [CC]   k_test_inv.c: Compiling
+|     [CC]   k_test_thd.c: Compiling
+|     [CC]   k_test_captbl.c: Compiling
+|     [LD]   tests.kernel_tests (tests.kernel_tests.o): Linking together k_test_tcap.o k_test_async.o kernel_test_booter.o k_test_mem.o k_perf_tests.o k_test_inv.o k_test_thd.o k_test_captbl.o inv.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.crt_tests:
+|     [CC]   crttests.c: Compiling
+|     [LD]   tests.crt_tests (tests.crt_tests.o): Linking together crttests.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+| Component tests.unit_cxx:
+|     [CXX]  cxx.cc: Compiling
+|     [LD]   tests.unit_cxx (tests.unit_cxx.o): Linking together cxx.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+|     [COMP]   Processing component interface pong
+| Component pong.pingpong:
+|     [CC]   pong.c: Compiling
+|     [LD]   pong.pingpong (pong.pingpong.o): Linking together pong.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+|     [COMP]   Processing component interface chanmgr
+| Component chanmgr.simple:
+|     [CC]   chanmgr.c: Compiling
+|     [LD]   chanmgr.simple (chanmgr.simple.o): Linking together chanmgr.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+|     [COMP]   Processing component interface sched
+| Component sched.root_fprr:
+|     [CC]   init.c: Compiling
+|     [LD]   sched.root_fprr (sched.root_fprr.o): Linking together init.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+|     [COMP]   Processing component interface capmgr
+| Component capmgr.simple:
+|     [CC]   capmgr.c: Compiling
+|     [LD]   capmgr.simple (capmgr.simple.o): Linking together capmgr.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+|     [COMP]   Processing component interface no_interface
+| Component no_interface.llbooter:
+|     [CC]   llbooter.c: Compiling
+|     [LD]   no_interface.llbooter (no_interface.llbooter.o): Linking together llbooter.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+|     [COMP]   Processing component interface evt
+| Component evt.evtmgr:
+|     [CC]   evtmgr.c: Compiling
+|     [LD]   evt.evtmgr (evt.evtmgr.o): Linking together evtmgr.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+|     [COMP]   Processing component interface filesystem
+| Component filesystem.ext4:
+|     [CC]   ext4_blockdev.c: Compiling
+|     [CC]   ps_os.c: Compiling
+|     [CC]   ext4.c: Compiling
+|     [LD]   filesystem.ext4 (filesystem.ext4.o): Linking together ext4_blockdev.o ps_os.o ext4.o /home/msdx321/workspace/composite-sqlite/src/components/lib/posix/posix.lib.o /home/msdx321/workspace/composite-sqlite/src/components/lib/component/component.lib.o
+make --no-print-directory -I/home/msdx321/workspace/composite-sqlite/src PLATFORM=i386 -C platform clean
+make -C i386 clean
+
+***********************************************
+***** Building i386 Platform and Kernel *******
+***********************************************
+
+make --no-print-directory -I/home/msdx321/workspace/composite-sqlite/src PLATFORM=i386 -C platform
+make -C i386
+|     [CC]   Compiling kernel.o
+|     [CC]   Compiling gdt.o
+|     [CC]   Compiling idt.o
+|     [CC]   Compiling vm.o
+|     [CC]   Compiling printk.o
+|     [CC]   Compiling string.o
+|     [CC]   Compiling vtxprintf.o
+|     [CC]   Compiling tss.o
+|     [CC]   Compiling user.o
+|     [CC]   Compiling serial.o
+|     [CC]   Compiling hpet.o
+|     [CC]   Compiling chal.o
+|     [CC]   Compiling boot_comp.o
+|     [CC]   Compiling miniacpi.o
+|     [CC]   Compiling vga.o
+|     [CC]   Compiling exception.o
+|     [CC]   Compiling lapic.o
+|     [CC]   Compiling pgtbl.o
+|     [CC]   Compiling retype_tbl.o
+|     [CC]   Compiling liveness_tbl.o
+|     [CC]   Compiling tcap.o
+|     [CC]   Compiling capinv.o
+|     [CC]   Compiling captbl.o
+|     [AS]   Assembling loader.o
+[cos executing] src/composer/target/debug/compose composition_scripts/ext4_test.toml ext4_test
+Compiling component global.ext4_tests with the following command line:
+	make -C src COMP_INTERFACES="" COMP_IFDEPS="init/stubs+capmgr_create/stubs+filesystem/stubs+memmgr/stubs" COMP_LIBDEPS="" COMP_INTERFACE=tests COMP_NAME=ext4_tests COMP_VARNAME=global.ext4_tests COMP_OUTPUT=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.ext4_tests/tests.ext4_tests.global.ext4_tests COMP_BASEADDR=0x00400000 COMP_INITARGS_FILE=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.ext4_tests/initargs.c  component
+Compiling component global.filesystem with the following command line:
+	make -C src COMP_INTERFACES="filesystem/stubs" COMP_IFDEPS="init/stubs+capmgr_create/stubs+blockdev/stubs+memmgr/stubs" COMP_LIBDEPS="" COMP_INTERFACE=filesystem COMP_NAME=ext4 COMP_VARNAME=global.filesystem COMP_OUTPUT=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.filesystem/filesystem.ext4.global.filesystem COMP_BASEADDR=0x00400000 COMP_INITARGS_FILE=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.filesystem/initargs.c  component
+Compiling component global.blockdev with the following command line:
+	make -C src COMP_INTERFACES="blockdev/stubs" COMP_IFDEPS="init/stubs+capmgr_create/stubs+memmgr/stubs" COMP_LIBDEPS="" COMP_INTERFACE=blockdev COMP_NAME=ramdisk COMP_VARNAME=global.blockdev COMP_OUTPUT=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.blockdev/blockdev.ramdisk.global.blockdev COMP_BASEADDR=0x00400000 COMP_INITARGS_FILE=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.blockdev/initargs.c  component
+Compiling component global.sched with the following command line:
+	make -C src COMP_INTERFACES="sched/stubs+init/stubs" COMP_IFDEPS="init/stubs+capmgr/stubs+memmgr/stubs" COMP_LIBDEPS="" COMP_INTERFACE=sched COMP_NAME=root_fprr COMP_VARNAME=global.sched COMP_OUTPUT=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.sched/sched.root_fprr.global.sched COMP_BASEADDR=0x00400000 COMP_INITARGS_FILE=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.sched/initargs.c  component
+Compiling component global.capmgr with the following command line:
+	make -C src COMP_INTERFACES="capmgr/stubs+init/stubs+memmgr/stubs+capmgr_create/stubs" COMP_IFDEPS="init/stubs+addr/stubs" COMP_LIBDEPS="" COMP_INTERFACE=capmgr COMP_NAME=simple COMP_VARNAME=global.capmgr COMP_OUTPUT=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.capmgr/capmgr.simple.global.capmgr COMP_BASEADDR=0x00400000 COMP_INITARGS_FILE=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.capmgr/initargs.c  component
+Compiling component global.booter with the following command line:
+	make -C src COMP_INTERFACES="init/stubs+addr/stubs" COMP_IFDEPS="init/kernel" COMP_LIBDEPS="" COMP_INTERFACE=no_interface COMP_NAME=llbooter COMP_VARNAME=global.booter COMP_OUTPUT=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.booter/no_interface.llbooter.global.booter COMP_BASEADDR=0x00400000 COMP_INITARGS_FILE=/home/msdx321/workspace/composite-sqlite/system_binaries/cos_build-ext4_test/global.booter/initargs.c  component
+Error: Undefined dependency for unresolved function.  Component ComponentName { var_name: "ext4_tests", scope_name: "global" } has an undefined function call to fs_fseek that is not satisfied by any of its dependencies (i.e. that function isn't provided by any of ComponentName { var_name: "sched", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" } ComponentName { var_name: "filesystem", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" }).
+Error: Undefined dependency for unresolved function.  Component ComponentName { var_name: "ext4_tests", scope_name: "global" } has an undefined function call to fs_fread that is not satisfied by any of its dependencies (i.e. that function isn't provided by any of ComponentName { var_name: "sched", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" } ComponentName { var_name: "filesystem", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" }).
+Error: Undefined dependency for unresolved function.  Component ComponentName { var_name: "ext4_tests", scope_name: "global" } has an undefined function call to fs_ftruncate that is not satisfied by any of its dependencies (i.e. that function isn't provided by any of ComponentName { var_name: "sched", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" } ComponentName { var_name: "filesystem", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" }).
+Error: Undefined dependency for unresolved function.  Component ComponentName { var_name: "ext4_tests", scope_name: "global" } has an undefined function call to fs_ftell that is not satisfied by any of its dependencies (i.e. that function isn't provided by any of ComponentName { var_name: "sched", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" } ComponentName { var_name: "filesystem", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" }).
+Error: Undefined dependency for unresolved function.  Component ComponentName { var_name: "ext4_tests", scope_name: "global" } has an undefined function call to fs_fclose that is not satisfied by any of its dependencies (i.e. that function isn't provided by any of ComponentName { var_name: "sched", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" } ComponentName { var_name: "filesystem", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" }).
+Error: Undefined dependency for unresolved function.  Component ComponentName { var_name: "ext4_tests", scope_name: "global" } has an undefined function call to fs_fopen that is not satisfied by any of its dependencies (i.e. that function isn't provided by any of ComponentName { var_name: "sched", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" } ComponentName { var_name: "filesystem", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" }).
+Error: Undefined dependency for unresolved function.  Component ComponentName { var_name: "ext4_tests", scope_name: "global" } has an undefined function call to fs_fsize that is not satisfied by any of its dependencies (i.e. that function isn't provided by any of ComponentName { var_name: "sched", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" } ComponentName { var_name: "filesystem", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" }).
+Error: Undefined dependency for unresolved function.  Component ComponentName { var_name: "ext4_tests", scope_name: "global" } has an undefined function call to __fs_s_smem_init that is not satisfied by any of its dependencies (i.e. that function isn't provided by any of ComponentName { var_name: "sched", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" } ComponentName { var_name: "filesystem", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" }).
+Error: Undefined dependency for unresolved function.  Component ComponentName { var_name: "ext4_tests", scope_name: "global" } has an undefined function call to fs_fwrite that is not satisfied by any of its dependencies (i.e. that function isn't provided by any of ComponentName { var_name: "sched", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" } ComponentName { var_name: "filesystem", scope_name: "global" } ComponentName { var_name: "capmgr", scope_name: "global" }).
+
+Can't access system image  system_binaries/cos_build-ext4_test/cos.img
