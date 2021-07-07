@@ -4,3 +4,7 @@
 [submodule "src/components/lib/ck/ck"]
 	path = src/components/lib/ck/ck
 	url = https://github.com/gwsystems/ck.git
+[submodule "src/components/lib/lwip/lwip"]
+	path = src/components/lib/lwip/lwip
+	url = git@github.com:msdx321/lwip.git
+	branch = STABLE-2_1_x
