@@ -40,7 +40,7 @@ LIBRARY_DEPENDENCIES = component
 # libraries written for composite. Get rid of this if you require a
 # custom Makefile (e.g. if you use an existing
 # (non-composite-specific) library. An example of this is `kernel`.
-include Makefile.lib
+# include Makefile.lib
 
 ## Type 2, external library: If you need to specialize the Makefile
 ## for an external library, you can add the external code as a
@@ -52,12 +52,54 @@ include Makefile.lib
 ## To access the Composite Makefile definitions, use the following. An
 ## example of a Makefile written in this way is in `ps/`.
 #
-# include Makefile.src Makefile.comp Makefile.dependencies
-# .PHONY: all clean init distclean
-## Fill these out with your implementation
-# all:
-# clean:
-#
-## Default rules:
-# init: clean all
-# distclean: clean
+
+include Makefile.src Makefile.comp Makefile.dependencies
+
+LWIPDIR=./lwip/src
+COSINCDIR=./include
+
+CFLAGS+=-I$(LWIPDIR)/include -I$(COSINCDIR) -I$(LWIPDIR)/include/ipv4 $(CINC) $(DEPENDENCY_INCPATH) -Wno-attributes -Wno-format -Wno-overflow
+
+COREFILES=$(LWIPDIR)/core/mem.c   \
+    $(LWIPDIR)/core/memp.c        \
+    $(LWIPDIR)/core/netif.c       \
+    $(LWIPDIR)/core/pbuf.c        \
+    $(LWIPDIR)/core/raw.c         \
+    $(LWIPDIR)/core/stats.c       \
+    $(LWIPDIR)/core/sys.c         \
+    $(LWIPDIR)/core/tcp.c         \
+    $(LWIPDIR)/core/tcp_in.c      \
+    $(LWIPDIR)/core/tcp_out.c     \
+    $(LWIPDIR)/core/udp.c         \
+    $(LWIPDIR)/core/init.c        \
+    $(LWIPDIR)/core/inet_chksum.c
+
+CORE4FILES=$(LWIPDIR)/core/ipv4/icmp.c \
+    $(LWIPDIR)/core/ipv4/ip4.c         \
+    $(LWIPDIR)/core/ipv4/ip4_addr.c    \
+    $(LWIPDIR)/core/ipv4/ip4_frag.c
+
+LWIPFILES=$(COREFILES) $(CORE4FILES)
+LWIPFILESW=$(wildcard $(LWIPFILES))
+LWIPOBJS=$(notdir $(LWIPFILESW:.c=.o))
+
+OUTPUT_OBJ=net_stack.o
+
+all: .depend $(OUTPUT_OBJ)
+.PHONY: all
+
+clean:
+	rm -f *.o $(OUTPUT_OBJ) .depend* 
+
+depend dep: .depend
+
+include .depend
+
+.depend: $(LWIPFILES) 
+	$(CC) $(CFLAGS) -MM $^ > .depend || rm -f .depend
+
+$(OUTPUT_OBJ): $(LWIPOBJS)
+	@ld -m elf_i386 -r -o $@ $^
+
+%.o:
+	$(CC) $(CFLAGS) -c $(<:.o=.c)
